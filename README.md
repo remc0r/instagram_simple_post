@@ -28,7 +28,7 @@ Examples
 ```python
 import instagram_simple_post
 
-instagram_simple_post.publish_image('<PATH_TO_IMAGE>', 'Description of my post', True)
+instagram_simple_post.publish_image('<PATH_TO_IMAGE>', 'Description of my post')
 ```
 
 ### From NodeJs
@@ -36,11 +36,11 @@ instagram_simple_post.publish_image('<PATH_TO_IMAGE>', 'Description of my post',
 Requirements : You need to uncomment the last line of instagram_simple_post.py
 
 ```js
-async function postInstagram(listeFichiers, desc, upload){
+async function postInstagram(listeFichiers, desc){
     let options = {
         mode: 'text',
         pythonOptions: ['-u'], // get print results in real-time
-        args: [listeFichiers, desc, upload] //An argument which can be accessed in the script using sys.argv[1]
+        args: [listeFichiers, desc] //An argument which can be accessed in the script using sys.argv[1]
     };
 
     // Lancement du code Python
@@ -58,9 +58,9 @@ async function postInstagram(listeFichiers, desc, upload){
 
 }
 
-postInstagram('<PATH_TO_IMAGE>', 'Description of my post', true);
+postInstagram('<PATH_TO_IMAGE>', 'Description of my post');
 ```
 # Notes from author
 
-If you don't want to use Filestack storage function, you need to set the 'upload' parameter to False and give direct media's URLs in the function call
+If you don't want to use Filestack storage function, you need to edit **instagram_simple_post.py** to delete code block where the filestack upload append, detect if the media is image or video, and give direct media URLs in parameter
 
