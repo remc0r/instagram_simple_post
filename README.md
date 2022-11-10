@@ -61,5 +61,5 @@ postInstagram('<PATH_TO_IMAGE>', 'Description of my post', true);
 ```
 # Notes from author
 
-If you don't want to use Filestack storage function, you can delete the lines blocks of the upload and give direct media's URLs in the function call
+If you don't want to use Filestack storage function, you need to set the 'upload' parameter to False and give direct media's URLs in the function call
 
