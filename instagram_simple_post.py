@@ -6,7 +6,7 @@ from filestack import Client # Comment this line if you don't want filestack upl
 import sys
 import time
 
-def publish_image(listImg, desc, upload):
+def publish_image(listImg, desc):
     #######################################################################################
     #Post the media(s) on instagram with description.
 
@@ -18,7 +18,7 @@ def publish_image(listImg, desc, upload):
     
     #######################################################################################    
 
-    if upload: client = Client(config.filestack_api_key) #Connect to filestack
+    client = Client(config.filestack_api_key) #Connect to filestack
         
     # Graph api access_token
     access_token = config.ig_access_token
@@ -33,12 +33,10 @@ def publish_image(listImg, desc, upload):
     listFic = listImg.split(",") #Make a list of the file(s) name(s)
 
     #Upload each file on filestack
-    if upload:
-        for fic in listFic:
-            imageUrl = client.upload(filepath=fic)
-            listUrl.append(imageUrl.url + ";" + imageUrl.metadata()["mimetype"].split("/")[0])
-        print("liste url : " + str(listUrl))
-    else : listUrl = listFic
+    for fic in listFic:
+        imageUrl = client.upload(filepath=fic)
+        listUrl.append(imageUrl.url + ";" + imageUrl.metadata()["mimetype"].split("/")[0])
+    print("liste url : " + str(listUrl))
 
     # ONE PHOTO POST
     if len(listUrl) == 1:
