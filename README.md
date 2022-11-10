@@ -56,8 +56,9 @@ async function postInstagram(listeFichiers, desc, upload){
     // Print python program logs
     console.log(logs);
 
-postInstagram('<PATH_TO_IMAGE>', 'Description of my post', true);
 }
+
+postInstagram('<PATH_TO_IMAGE>', 'Description of my post', true);
 ```
 # Notes from author
 
