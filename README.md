@@ -28,7 +28,7 @@ Examples
 ```python
 import instagram_simple_post
 
-instagram_simple_post.publish_image('<PATH_TO_IMAGE>', 'Description of my post')
+instagram_simple_post.publish_image('<PATH_TO_IMAGE>', 'Description of my post', True)
 ```
 
 ### From NodeJs
@@ -36,11 +36,11 @@ instagram_simple_post.publish_image('<PATH_TO_IMAGE>', 'Description of my post')
 Requirements : You need to uncomment the last line of instagram_simple_post.py
 
 ```js
-async function postInstagram(listeFichiers, desc){
+async function postInstagram(listeFichiers, desc, upload){
     let options = {
         mode: 'text',
         pythonOptions: ['-u'], // get print results in real-time
-        args: [listeFichiers, desc] //An argument which can be accessed in the script using sys.argv[1]
+        args: [listeFichiers, desc, upload] //An argument which can be accessed in the script using sys.argv[1]
     };
 
     // Lancement du code Python
@@ -56,7 +56,7 @@ async function postInstagram(listeFichiers, desc){
     // Print python program logs
     console.log(logs);
 
-postInstagram('<PATH_TO_IMAGE>', 'Description of my post');
+postInstagram('<PATH_TO_IMAGE>', 'Description of my post', true);
 }
 ```
 # Notes from author
