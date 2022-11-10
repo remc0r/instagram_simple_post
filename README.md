@@ -36,6 +36,11 @@ instagram_simple_post.publish_image('<PATH_TO_IMAGE>', 'Description of my post')
 Requirements : You need to uncomment the last line of instagram_simple_post.py
 
 ```js
+//Import child process module.
+const {spawn} = require('child_process');
+//Import PythonShell module.
+const {PythonShell} =require('python-shell');
+
 async function postInstagram(listeFichiers, desc){
     let options = {
         mode: 'text',
